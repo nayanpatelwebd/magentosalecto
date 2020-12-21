@@ -1,0 +1,169 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Luma theme overrides
+//  _____________________________________________
+
+//  Theme file should contain declarations (overrides) ONLY OF EXISTING variables
+//  Otherwise this theme won't be available for parent nesting
+//  All new variables should be placed in local theme lib or local theme files
+
+//
+//  Typography
+//  ---------------------------------------------
+
+@color-green: #ffffff;
+@button-border-green: #337133;
+@button-background-green: #337133;
+@left: left;
+@right: right;
+@none: none;
+@button__border-radius: 3px;
+@full: 100%;
+@half: 50%;
+@zero: 0px;
+@five: 5px;
+@ten: 10px;
+@twenty: 20px;
+@hidden: hidden;
+
+//  Fonts
+@icons__font-path: '@{baseDir}fonts/Luma-Icons';
+@icons__font-name: 'luma-icons';
+
+//  Color nesting
+@panel__background-color: @color-gray-light0;
+@border-color__base: @color-gray80;
+
+//  Headings
+@h3__font-weight: @font-weight__semibold;
+@h3__margin-top: @indent__base;
+
+//  Links
+@link__color: @theme__color__primary-alt;
+
+//  Focus
+@focus__color: @color-blue3;
+
+
+//
+//  Navigation
+//  ---------------------------------------------
+
+@navigation__background: @color-gray94;
+@navigation-level0-item__active__color: @primary__color;
+
+@submenu-item__active__color: @navigation-level0-item__active__color;
+
+//  Desktop navigation
+@navigation-desktop-level0-item__line-height: 47px;
+@submenu-desktop__font-weight: @font-weight__regular;
+@submenu-desktop-item__active__color: @navigation-level0-item__active__color;
+
+
+//
+//  Buttons
+//  ---------------------------------------------
+
+@button__font-weight: @font-weight__semibold;
+
+//  Default = secondary button
+@button__background: @color-gray-darken0;
+@button__border: 1px solid @border-color__base;
+@button__hover__color: @button__color;
+@button__hover__background: darken(@button__background, 5%);
+@button__active__background: @color-gray-darken1;
+
+//  Primary button
+@button-primary__background: @button-background-green;
+@button-primary__border: 1px solid @button-border-green;
+@button-primary__hover__background: darken(@button-background-green, 5%);
+@button-primary__hover__color: @color-white;
+@button-primary__active__background: @link__hover__color;
+@button-primary__active__border: 1px solid @button-border-green;
+@button-primary__active__color: @color-white;
+
+
+//  Button with icon
+@button-icon__line-height: @icon-font__line-height;
+
+//
+//  Icons
+//  ---------------------------------------------
+
+@icon-wishlist-empty: false;
+@icon-comment-reflected: false;
+@icon-compare-empty: false;
+@icon-arrow-up-thin: false;
+@icon-arrow-right-thin: false;
+@icon-arrow-left-thin: false;
+@icon-arrow-down-thin: false;
+@icon-wishlist-empty: '\e601';
+
+//
+//  Messages
+//  ---------------------------------------------
+
+@message__padding: 12px @indent__base 12px @indent__m;
+@message__line-height: false;
+@message-icon__font-size: 24px;
+@message-icon__inner-padding-left: 45px;
+@message-icon__top: 22px;
+@message-error-icon: @icon-error;
+@message-success-icon: @icon-success;
+
+
+//
+//  Rating
+//  ---------------------------------------------
+
+@rating-icon__font-size: 16px;
+@rating-icon__letter-spacing: 2px;
+
+
+//
+//  Footer
+//  ---------------------------------------------
+
+@copyright__background-color: @color-gray-middle4;
+
+//
+//  Common
+//  _____________________________________________
+
+
+.product-item {
+	.tocart {
+		border-radius: @button__border-radius;
+	}
+}
+.page-wrapper {
+	.page-bottom {
+		width: @full;
+		padding: @zero;
+		overflow-x: @hidden;
+		.slick-slide h3 {
+			padding: @zero @ten;
+		}
+	}
+}
+
+
+
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+	.header {
+		.logo {
+			float: @right;
+		}
+		.minicart-wrapper {
+			float: @none;
+		}
+		.block-search {
+			float: @left;
+		}	
+	}
+}
